@@ -1,0 +1,33 @@
+body {
+  background-color: #62a16c;
+}
+h1 {
+  color: #0b3812;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+h2 {
+	color: #0b3812;
+	font-family: "Lucida Console", "Courier New", monospace;
+}
+p {
+  color: red;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+button {
+	background-color: #41ab53;
+	color: black;
+	margin: 10px 0px 0px 10px;
+	font-family: "Lucida Console", "Courier New", monospace;
+}
+
+li {
+	color: black;
+	font-family: "Lucida Console", "Courier New", monospace;
+}
+
+div {
+	color: black;
+	font-family: "Lucida Console", "Courier New", monospace;
+	margin: 0px 0px 0px 50px;
+}
