@@ -4,6 +4,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Task Picker</title>
+    <!-- 1. FIRST: Load the JS Confetti Library from the CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    
+    <!-- 2. SECOND: Load your own JavaScript file (app.js) -->
+    <script src="app.js" defer></script>
 </head>
 <body>
   <h1>Today's Task</h1>
@@ -15,6 +20,5 @@
   <input type="text" id="newTask" placeholder="Add new task" />
   <button onclick="addTask()">Add</button>
 
-  <script src="app.js"></script>
 </body>
 </html>
