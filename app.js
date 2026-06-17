@@ -1,11 +1,6 @@
-// Basic usage
-const jsConfetti = new JSConfetti()
-
-// Trigger colorful confetti
-jsConfetti.addConfetti({
-  confettiColors: ['#ff0a54', '#ff477e', '#ff7096'],
-  confettiNumber: 100
-})
+// Initialise jsConfetti for Done button
+const jsConfetti = window.JSConfetti ?
+new JSConfetti() : null;
 
 // --- Load from or initialize task list ---
 function loadTasks() {
@@ -39,12 +34,14 @@ function renderTaskList() {
     const delBtn = document.createElement("button");
     delBtn.textContent = "Done";
     delBtn.onclick = () => {
-      // Or use emojis
+      // jsConfetti using emojis
+      if (jsConfetti) {
        jsConfetti.addConfetti({
          emojis: ['🎉', '✨', '💫', '🎊'],
          emojiSize: 50,
          confettiNumber: 30
-      })
+      });
+      }
       tasks.splice(i, 1);
       saveTasks(tasks);
       renderTaskList();
