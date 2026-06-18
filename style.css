@@ -1,4 +1,4 @@
-body {
+mobody {
   background-color: #62a16c;
 }
 
@@ -18,7 +18,7 @@ p {
 }
 
 footer {
-  position: abaolute;
+  position: absolute;
   bottom: 0;
 }
 
