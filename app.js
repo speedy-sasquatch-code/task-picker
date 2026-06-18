@@ -34,7 +34,8 @@ function renderTaskList() {
 
     const delBtn = document.createElement("button");
     delBtn.textContent = "Done";
-    delBtn.onclick = ((index) => () => { ... })(i);
+    delBtn.onclick = ((index) => () => {
+      
       // jsConfetti using emojis
       if (jsConfetti) {
        jsConfetti.addConfetti({
@@ -48,7 +49,7 @@ function renderTaskList() {
       score += 10;
       updateScoreDisplay();
       renderTaskList();
-    };
+    })(i);
 
     li.appendChild(delBtn);
     list.appendChild(li);
