@@ -2,7 +2,7 @@
 const jsConfetti = window.JSConfetti ?
 new JSConfetti() : null;
 
-// --- Load from or initialize task list ---
+// Load from or initialize task list
 function loadTasks() {
   const stored = localStorage.getItem("tasks");
   return stored ? JSON.parse(stored) : ["Dishes", "Laundry", "Vacuum"];
@@ -13,8 +13,9 @@ function saveTasks(tasks) {
 }
 
 let tasks = loadTasks();
+let score = 0;
 
-// --- Display today's task ---
+// Display today's task
 function getDailyTask(tasks) {
   const today = new Date().toDateString();
   const hash = [...today].reduce((acc, char) => acc + char.charCodeAt(0), 0);
@@ -23,7 +24,7 @@ function getDailyTask(tasks) {
 
 document.getElementById("todayTask").textContent = getDailyTask(tasks);
 
-// --- Display task list and allow editing ---
+// Display task list and allow completion
 function renderTaskList() {
   const list = document.getElementById("taskList");
   list.innerHTML = "";
@@ -44,6 +45,8 @@ function renderTaskList() {
       }
       tasks.splice(i, 1);
       saveTasks(tasks);
+      score += 10;
+      updateScoreDisplay();
       renderTaskList();
     };
 
@@ -52,6 +55,18 @@ function renderTaskList() {
   });
 }
 
+// Display an image based on the score
+function updateScoreDisplay() {
+  const rewardImg = document.getElementById("reward-img");
+
+  if (score > 10) {
+    rewardImg.style.display = "block";
+  } else {
+    rewardImg.style.display = "none";
+  }
+}
+
+// Add a new task to the list
 function addTask() {
   const input = document.getElementById("newTask");
   const newTask = input.value.trim();
@@ -63,4 +78,5 @@ function addTask() {
   }
 }
 
+// Ensure the task list is rendered
 renderTaskList();
