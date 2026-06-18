@@ -57,9 +57,31 @@ function renderTaskList() {
 
 // Display an image based on the score
 function updateScoreDisplay() {
-  const rewardImg = document.getElementById("reward-img");
+  const rewardImg = document.getElementById("reward-img1");
 
-  if (score > 10) {
+  if (score = 10) {
+    rewardImg.style.display = "block";
+  } else {
+    rewardImg.style.display = "none";
+  }
+}
+
+// Display an image based on the score
+function updateScoreDisplay() {
+  const rewardImg = document.getElementById("reward-img2");
+
+  if (score = 20) {
+    rewardImg.style.display = "block";
+  } else {
+    rewardImg.style.display = "none";
+  }
+}
+
+// Display an image based on the score
+function updateScoreDisplay() {
+  const rewardImg = document.getElementById("reward-img3");
+
+  if (score = 30) {
     rewardImg.style.display = "block";
   } else {
     rewardImg.style.display = "none";
