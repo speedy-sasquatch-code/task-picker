@@ -34,7 +34,7 @@ function renderTaskList() {
 
     const delBtn = document.createElement("button");
     delBtn.textContent = "Done";
-    delBtn.onclick = () => {
+    delBtn.onclick = ((index) => () => { ... })(i);
       // jsConfetti using emojis
       if (jsConfetti) {
        jsConfetti.addConfetti({
@@ -72,7 +72,7 @@ function updateScoreDisplay() {
   } else if (score >= 20) {
     rewardImg2.style.display = "block"; // Score is 20+
   } else if (score >= 10) {
-    rewardImg3.style.display = "block"; // Score is 10+
+    rewardImg1.style.display = "block"; // Score is 10+
   }
 }
 
