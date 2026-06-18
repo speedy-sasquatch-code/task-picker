@@ -13,7 +13,8 @@ function saveTasks(tasks) {
 }
 
 let tasks = loadTasks();
-let score = 0;
+// Set the score to 0 upon start and get the player's score
+let score = parseInt(localStorage.getItem("score")) || 0;
 
 // Display today's task
 function getDailyTask(tasks) {
@@ -46,7 +47,9 @@ function renderTaskList() {
       }
       tasks.splice(i, 1);
       saveTasks(tasks);
+      // Update the score and store it in local storage
       score += 10;
+      localStorage.setItem("score", score);
       updateScoreDisplay();
       renderTaskList();
     })(i);
@@ -58,6 +61,9 @@ function renderTaskList() {
 
 // Display an image based on the score
 function updateScoreDisplay() {
+  // Update and display the score
+  document.getElementById("scoreDisplay").textContent = score;
+  
   const rewardImg1 = document.getElementById("reward-img1");
   const rewardImg2 = document.getElementById("reward-img2");
   const rewardImg3 = document.getElementById("reward-img3");
@@ -91,4 +97,5 @@ function addTask() {
 
 // Ensure the task list is rendered
 renderTaskList();
+updateScoreDisplay();
 document.getElementById("addTaskBtn").addEventListener("click", addTask);
