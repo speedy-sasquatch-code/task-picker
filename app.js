@@ -91,3 +91,4 @@ function addTask() {
 
 // Ensure the task list is rendered
 renderTaskList();
+document.getElementById("addTaskBtn").addEventListener("click", addTask);
