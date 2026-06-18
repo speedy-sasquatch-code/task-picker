@@ -59,11 +59,21 @@ function renderTaskList() {
   });
 }
 
-// Display an image based on the score
+// Update and display the score
 function updateScoreDisplay() {
-  // Update and display the score
   document.getElementById("scoreDisplay").textContent = score;
   
+// Display an message based on the score
+const message = document.getElementById("scoreMessage");
+  if (score >= 30) {
+    message.textContent = "it's a good day";
+  } else if (score >= 20) {
+    message.textContent = "feed the horse";
+  } else if (score >= 10) {
+    message.textContent = "open the barn";
+  }
+  
+// Display an image based on the score
   const rewardImg1 = document.getElementById("reward-img1");
   const rewardImg2 = document.getElementById("reward-img2");
   const rewardImg3 = document.getElementById("reward-img3");
